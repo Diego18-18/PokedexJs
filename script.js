@@ -22,7 +22,7 @@ async function loadPokemons(url) {
       $prevLink,
       $nextLink;
 
-    console.log(json);
+    // console.log(json);
 
     if (!res.ok) throw { status: res.status, statusText: res.statusText };
 
@@ -31,7 +31,7 @@ async function loadPokemons(url) {
         let res = await fetch(json.results[i].url),
           pokemon = await res.json();
 
-        console.log(res, pokemon);
+        // console.log(res, pokemon);
 
         if (!res.ok) throw { status: res.status, statusText: res.statusText };
 
@@ -143,7 +143,7 @@ async function loadPokemons(url) {
         </figure>
         `;
       } catch (err) {
-        console.log(err);
+        // console.log(err);
         let message = err.statusText || "Ocurrió un error";
         $template += `
         <figure>
@@ -161,7 +161,7 @@ async function loadPokemons(url) {
     $nextLink = json.next ? `<a class="next" href="${json.next}">></a>` : "";
     $buttons.innerHTML = `${$prevLink} ${$nextLink}`;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     let message = err.statusText || "Ocurrió un error";
     $pokemons.innerHTML = `<p>Error ${err.status}: ${message}</p>`;
   }
@@ -250,7 +250,7 @@ d.addEventListener("click", (e) => {
         pokemon = await res.json(),
         $template = "";
 
-      console.log(pokemon);
+      // console.log(pokemon);
 
       if (!res.ok) throw { status: res.status, statusText: res.statusText };
 
@@ -364,7 +364,7 @@ d.addEventListener("click", (e) => {
 
       $pokemons.innerHTML = $template;
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       let message = err.statusText || "Ocurrió un error";
       $pokemons.innerHTML = `<p>Error ${err.status}: ${message}</p>`;
     }

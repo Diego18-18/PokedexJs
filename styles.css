@@ -637,3 +637,13 @@ p {
     position: absolute;
   }
 }
+
+@media screen and (max-height: 800px) and (min-width: 570px) {
+  .container {
+    margin: 3rem auto 0;
+  }
+
+  .pokemon-modal img {
+    width: 8rem;
+  }
+}
